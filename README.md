@@ -1,25 +1,187 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Cooperativas - Teste Frontend
 
-## Getting Started
+## Sobre o Projeto
 
-First, run the development server:
+Aplicação web desenvolvida com **Next.js** e **shadcn/ui** para exibição de informações de cooperativas obtidas de uma API REST. O projeto implementa uma tabela responsiva com funcionalidades de paginação, ordenação e formatação de dados.
+
+##  Tecnologias Utilizadas
+
+- **Next.js 13+** (App Router)
+- **TypeScript**
+- **shadcn/ui** (componentes de interface)
+- **Tailwind CSS** (estilização)
+- **Lucide React** (ícones)
+
+## Como Executar o Projeto
+
+### Pré-requisitos
+
+- Node.js 18+
+- npm, yarn ou pnpm
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone [seu-repositorio]
+
+# Entre na pasta do projeto
+cd cooperativas-app
+
+# Instale as dependências
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+```
+
+### Executar em ambiente de desenvolvimento
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Funcionalidades Implementadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📊 Tabela de Cooperativas
+- Exibição responsiva de dados das cooperativas
+- Colunas: Nome, CNPJ, Estado, Sistema Cooperativo
+- Design limpo e profissional utilizando componentes shadcn/ui
 
+### 🎭 Formatação de Dados
+- **CNPJ formatado** com máscara: `XX.XXX.XXX/XXXX-XX`
+- Exemplo: `42898825000115` → `42.898.825/0001-15`
+
+### 📄 Paginação
+- 10 registros por página
+- Controles de navegação (Anterior/Próxima)
+- Indicador de página atual e total de páginas
+- Componentes shadcn/ui para interface consistente
+
+### 🔄 Ordenação
+- Ordenação clicável em todos os headers da tabela
+- Três estados por coluna:
+  - 1º clique: **Ordem crescente** ↑
+  - 2º clique: **Ordem decrescente** ↓
+  - 3º clique: **Estado original**
+- Indicadores visuais para estado da ordenação
+
+### 📱 Responsividade
+- Layout adaptativo para diferentes tamanhos de tela
+- Testado em dispositivos mobile e tablet
+- Tabela otimizada para visualização em telas pequenas
+
+### 🔄 Estados da Aplicação
+- **Loading spinner** durante carregamento dos dados
+- **Tratamento de erros** da API
+- **Estados de loading** com feedback visual
+
+## 🌐 API Utilizada
+
+- **Endpoint**: `https://subscribe-api-production.up.railway.app/api/v1/coops`
+- **Método**: GET
+- **Autenticação**: Não necessária
+- **Formato**: Array de objetos JSON
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/                    # App Router (Next.js 13+)
+│   ├── globals.css        # Estilos globais
+│   ├── layout.tsx         # Layout principal
+│   └── page.tsx           # Página inicial
+├── components/            # Componentes React
+│   ├── cooperativas/      # Componentes específicos
+│   │   └── CooperativasTable.tsx
+│   └── ui/               # Componentes shadcn/ui
+├── lib/                  # Utilitários
+│   └── utils.ts          # Funções auxiliares
+└── types/               # Definições TypeScript
+    └── cooperativa.ts   # Tipos da aplicação
+```
+
+## 🎯 Decisões Técnicas
+
+### Arquitetura
+- **App Router** do Next.js 13+ para roteamento moderno
+- **Componentes funcionais** com hooks do React
+- **TypeScript** para tipagem estática e maior segurança
+- **Separação de responsabilidades** entre componentes
+
+### Performance
+- **useState** para gerenciamento de estado local
+- **useEffect** otimizado para chamadas da API
+- **Paginação** para limitar dados renderizados
+- **Memoização** implícita dos componentes funcionais
+
+### Interface
+- **shadcn/ui** para componentes consistentes e acessíveis
+- **Tailwind CSS** para estilização utilitária
+- **Design system** coeso com tema personalizado
+- **Indicadores visuais** para melhor UX
+
+### Tratamento de Dados
+- **Formatação de CNPJ** com função utilitária reutilizável
+- **Ordenação** implementada com algoritmos JavaScript nativos
+- **Validação** de tipos com TypeScript
+
+## 🚀 Melhorias Futuras
+
+### Funcionalidades
+- [ ] Busca/filtro por nome ou CNPJ
+- [ ] Exportação de dados (CSV/Excel)
+- [ ] Seleção múltipla de registros
+- [ ] Modal com detalhes completos da cooperativa
+
+### Performance
+- [ ] Implementar React Query para cache de dados
+- [ ] Lazy loading de componentes
+- [ ] Otimização de imagens com Next.js Image
+- [ ] Service Worker para funcionamento offline
+
+### Interface
+- [ ] Modo escuro (dark mode)
+- [ ] Animações de transição
+- [ ] Breadcrumbs para navegação
+- [ ] Skeleton loading mais elaborado
+
+### Acessibilidade
+- [ ] Navegação por teclado aprimorada
+- [ ] Screen reader melhorado
+- [ ] Contraste de cores AA/AAA
+- [ ] Suporte completo a ARIA
+
+## 🧪 Testes
+
+### Testes realizados
+- ✅ Responsividade em diferentes dispositivos
+- ✅ Funcionalidade de paginação
+- ✅ Ordenação em todas as colunas
+- ✅ Formatação correta do CNPJ
+- ✅ Loading states
+- ✅ Tratamento de erros da API
+
+### Testes futuros
+- [ ] Testes unitários com Jest
+- [ ] Testes de integração
+- [ ] Testes end-to-end com Cypress
+- [ ] Testes de acessibilidade
+
+## 👨‍💻 Desenvolvedor
+
+Desenvolvido por [Seu Nome] para o teste técnico da Fenasbac.
+
+---
+
+**Obrigado pela oportunidade de demonstrar minhas habilidades técnicas!** 🚀
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
