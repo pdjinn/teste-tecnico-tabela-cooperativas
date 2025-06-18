@@ -48,28 +48,27 @@ pnpm dev
 Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 ##  Funcionalidades Implementadas
-##  Funcionalidades Implementadas
 
 ###  Tabela de Cooperativas
-###  Tabela de Cooperativas
+
 - Exibição responsiva de dados das cooperativas
 - Colunas: Nome, CNPJ, Estado, Sistema Cooperativo
 - Design limpo e profissional utilizando componentes shadcn/ui
 
 ###  Formatação de Dados
-###  Formatação de Dados
+
 - **CNPJ formatado** com máscara: `XX.XXX.XXX/XXXX-XX`
 - Exemplo: `42898825000115` → `42.898.825/0001-15`
 
 ###  Paginação
-###  Paginação
+
 - 10 registros por página
 - Controles de navegação (Anterior/Próxima)
 - Indicador de página atual e total de páginas
 - Componentes shadcn/ui para interface consistente
 
 ###  Ordenação
-###  Ordenação
+
 - Ordenação clicável em todos os headers da tabela
 - Três estados por coluna:
   - 1º clique: **Ordem crescente** ↑
@@ -78,18 +77,17 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 - Indicadores visuais para estado da ordenação
 
 ###  Responsividade
-###  Responsividade
+
 - Layout adaptativo para diferentes tamanhos de tela
 - Testado em dispositivos mobile e tablet
 - Tabela otimizada para visualização em telas pequenas
 
 ###  Estados da Aplicação
-###  Estados da Aplicação
+
 - **Loading spinner** durante carregamento dos dados
 - **Tratamento de erros** da API
 - **Estados de loading** com feedback visual
 
-##  API Utilizada
 ##  API Utilizada
 
 - **Endpoint**: `https://subscribe-api-production.up.railway.app/api/v1/coops`
@@ -97,7 +95,6 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 - **Autenticação**: Não necessária
 - **Formato**: Array de objetos JSON
 
-##  Estrutura do Projeto
 ##  Estrutura do Projeto
 
 ```
@@ -116,7 +113,6 @@ src/
     └── cooperativa.ts   # Tipos da aplicação
 ```
 
-##  Decisões Técnicas
 ##  Decisões Técnicas
 
 ### Arquitetura
@@ -150,16 +146,8 @@ src/
 - Exportação de dados (CSV/Excel)
 
 ### Interface
-- [ ] Modo escuro (dark mode)
-- [ ] Animações de transição
-- [ ] Breadcrumbs para navegação
-- [ ] Skeleton loading mais elaborado
-
-### Acessibilidade
-- [ ] Navegação por teclado aprimorada
-- [ ] Screen reader melhorado
-- [ ] Contraste de cores AA/AAA
-- [ ] Suporte completo a ARIA
+-  Modo escuro (dark mode)
+-  Animações de transição
 
 ##  Testes
 
@@ -178,9 +166,3 @@ Desenvolvido por Pedro Nunes de Lima para o teste técnico da Fenasbac.
 ---
 
 **Obrigado pela oportunidade de demonstrar minhas habilidades técnicas!** 
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
