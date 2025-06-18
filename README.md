@@ -139,7 +139,6 @@ src/
 - **Validação** de tipos com TypeScript
 
 ##  Melhorias Futuras
-##  Melhorias Futuras
 
 ### Funcionalidades
 - Busca/filtro por nome ou CNPJ
